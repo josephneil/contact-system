@@ -9,7 +9,39 @@
     @if ($contacts->isEmpty())
     <p>No contacts found.</p>
 @else
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+        }
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        table tr:hover {
+            background-color: #ddd;
+        }
+        table caption {
+            margin: 10px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+
     <table>
+        <caption>Contact List</caption>
         <thead>
             <tr>
                 <th>Name</th>
@@ -31,6 +63,7 @@
     </table>
     {{ $contacts->links() }}
 @endif
+
 
 </body>
 </html>
